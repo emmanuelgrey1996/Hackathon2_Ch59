@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Combat Sports - Tienda Premium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">ELITE COMBAT</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="boxeo.html" class="nav-link">Boxeo</a>
+                    <a href="taekwondo.html" class="nav-link">Taekwondo</a>
+                    <a href="mma.html" class="nav-link">MMA</a>
+                    <a href="karate.html" class="nav-link">Karate</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="icon-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">EQUIPO DE ÉLITE PARA CAMPEONES</h1>
+            <p class="hero-subtitle">Descubre la mejor selección de equipamiento profesional para deportes de combate</p>
+            <button class="btn-primary">Explorar Productos</button>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Fighter Silhouette -->
+    <section class="section silhouette-section">
+        <div class="container">
+            <h2 class="section-title">Encuentra Tu Equipo por Zona</h2>
+            <p class="section-subtitle">Haz clic en cualquier parte del cuerpo para ver productos específicos</p>
+            
+            <div class="silhouette-container">
+                <div class="silhouette-wrapper">
+                    <svg id="fighterSilhouette" viewBox="0 0 400 600" class="fighter-svg">
+                        <!-- Head -->
+                        <ellipse id="head" cx="200" cy="80" rx="40" ry="50" class="body-part" data-part="head"/>
+                        
+                        <!-- Neck -->
+                        <path id="neck" d="M 185 120 L 185 140 L 215 140 L 215 120" class="body-part" data-part="head"/>
+                        
+                        <!-- Torso -->
+                        <path id="torso" d="M 160 140 L 240 140 L 235 220 L 220 280 L 180 280 L 165 220 Z" class="body-part" data-part="torso"/>
+                        
+                        <!-- Left Arm Upper -->
+                        <path id="leftArmUpper" d="M 160 150 L 130 180 L 125 220 L 140 225" class="body-part" data-part="arms"/>
+                        
+                        <!-- Left Arm Lower -->
+                        <path id="leftArmLower" d="M 125 220 L 120 260 L 110 280 L 125 285" class="body-part" data-part="arms"/>
+                        
+                        <!-- Left Glove -->
+                        <circle id="leftGlove" cx="115" cy="290" r="25" class="body-part glove" data-part="hands"/>
+                        
+                        <!-- Right Arm Upper -->
+                        <path id="rightArmUpper" d="M 240 150 L 270 180 L 275 220 L 260 225" class="body-part" data-part="arms"/>
+                        
+                        <!-- Right Arm Lower -->
+                        <path id="rightArmLower" d="M 275 220 L 280 260 L 290 280 L 275 285" class="body-part" data-part="arms"/>
+                        
+                        <!-- Right Glove -->
+                        <circle id="rightGlove" cx="285" cy="290" r="25" class="body-part glove" data-part="hands"/>
+                        
+                        <!-- Left Leg Upper -->
+                        <path id="leftLegUpper" d="M 180 280 L 175 350 L 165 380 L 175 385" class="body-part" data-part="legs"/>
+                        
+                        <!-- Left Leg Lower -->
+                        <path id="leftLegLower" d="M 165 380 L 160 480 L 155 520 L 170 525 L 175 485" class="body-part" data-part="legs"/>
+                        
+                        <!-- Left Foot -->
+                        <ellipse id="leftFoot" cx="165" cy="540" rx="20" ry="15" class="body-part" data-part="feet"/>
+                        
+                        <!-- Right Leg Upper -->
+                        <path id="rightLegUpper" d="M 220 280 L 225 350 L 235 380 L 225 385" class="body-part" data-part="legs"/>
+                        
+                        <!-- Right Leg Lower -->
+                        <path id="rightLegLower" d="M 235 380 L 240 480 L 245 520 L 230 525 L 225 485" class="body-part" data-part="legs"/>
+                        
+                        <!-- Right Foot -->
+                        <ellipse id="rightFoot" cx="235" cy="540" rx="20" ry="15" class="body-part" data-part="feet"/>
+                    </svg>
+                </div>
+                
+                <div class="products-panel" id="productsPanel">
+                    <h3 class="panel-title">Selecciona una zona</h3>
+                    <p class="panel-subtitle">Haz clic en el cuerpo para ver productos</p>
+                    <div class="panel-products" id="panelProducts"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Equipment -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Material de Entrenamiento</h2>
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">Todos</button>
+                <button class="filter-tab" data-filter="bags">Costales y Peras</button>
+                <button class="filter-tab" data-filter="equipment">Equipamiento</button>
+                <button class="filter-tab" data-filter="accessories">Accesorios</button>
+            </div>
+            
+            <div class="products-grid" id="trainingProducts">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ELITE COMBAT</h3>
+                    <p class="footer-text">Tu tienda premium de equipamiento para deportes de combate</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Categorías</h4>
+                    <ul class="footer-links">
+                        <li><a href="boxeo.html">Boxeo</a></li>
+                        <li><a href="taekwondo.html">Taekwondo</a></li>
+                        <li><a href="mma.html">MMA</a></li>
+                        <li><a href="karate.html">Karate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Información</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elite Combat Sports. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
